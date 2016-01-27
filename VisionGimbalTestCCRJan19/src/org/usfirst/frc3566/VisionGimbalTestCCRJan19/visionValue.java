@@ -34,7 +34,7 @@ public class visionValue {
 	        
 	        
 	} 
-	
+
 	/*public void check(){
 		if ()
 	}*/

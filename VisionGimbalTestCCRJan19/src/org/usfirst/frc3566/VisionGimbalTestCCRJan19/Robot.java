@@ -74,7 +74,7 @@ public class Robot extends IterativeRobot {
      	   
         }
         System.out.println("hey");
-        Timer.delay(20);
+        Timer.delay(20);3
      	}*/ 
     	
     
