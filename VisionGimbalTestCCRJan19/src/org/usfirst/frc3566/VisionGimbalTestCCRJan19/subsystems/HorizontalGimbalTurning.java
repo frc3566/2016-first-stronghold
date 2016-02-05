@@ -49,12 +49,12 @@ public class HorizontalGimbalTurning extends Subsystem {
     
     public void moveHorizontalLeft(){
     	
-    	cAN1GimbalHorizontal.set(RobotMap.GIMBAL_MOTOR_SPEED * -1.0);
+    	cAN1GimbalHorizontal.set(RobotMap.GIMBAL_MOTOR_SPEED );
     }
     
 public void moveHorizontalRight(){
     	
-    	cAN1GimbalHorizontal.set(RobotMap.GIMBAL_MOTOR_SPEED );
+    	cAN1GimbalHorizontal.set(RobotMap.GIMBAL_MOTOR_SPEED * -1 );
     }
 
 public void stopHorizontalGimbal(){

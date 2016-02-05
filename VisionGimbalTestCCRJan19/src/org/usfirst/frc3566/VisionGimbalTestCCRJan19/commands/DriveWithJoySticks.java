@@ -14,10 +14,10 @@ package org.usfirst.frc3566.VisionGimbalTestCCRJan19.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3566.VisionGimbalTestCCRJan19.Robot;
 import org.usfirst.frc3566.VisionGimbalTestCCRJan19.RobotMap;
-import org.usfirst.frc3566.VisionGimbalTestCCRJan19.visionValue;
 
 /**
  *
@@ -51,6 +51,7 @@ public class DriveWithJoySticks extends Command {
     protected void execute() {
     	
     	Robot.driveTrain.driveIt(Robot.oi.getLeftStick(), Robot.oi.getRightStick());
+
     	
     	// visionValue value = new visionValue(1); 
     	

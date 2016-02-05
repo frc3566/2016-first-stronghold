@@ -52,9 +52,12 @@ stopornot=true;
    
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
-    }
+    	double potentiometernumber =  RobotMap.sensorAnalogPotentiometer1.get();
+    	/*if (potentiometernumber> 350){
 
+        	Robot.horizontalGimbalTurning.stopHorizontalGimbal();
+    	}*/
+    }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return this.isTimedOut();
