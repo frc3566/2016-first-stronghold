@@ -52,6 +52,8 @@ public class RobotMap {
 
 	    public static final double GIMBAL_INERTIA = 28;
 
+	    public static AnalogPotentiometer steeringAnalogPotentiometerFRONT;
+	    public static AnalogPotentiometer steeringAnalogPotentiometerBACK;
 	    public static AnalogPotentiometer sensorAnalogPotentiometer1;
 	    public static AnalogPotentiometer BPUpotentiometer;
     public static void init() {
@@ -74,7 +76,10 @@ public class RobotMap {
     	  backLeftMotor = new CANTalon(7);
           LiveWindow.addActuator("Subsystem 1", "CAN Talon 7", backLeftMotor);
 
+      	steeringAnalogPotentiometerFRONT = new AnalogPotentiometer(0,360,0);
+      	steeringAnalogPotentiometerBACK = new AnalogPotentiometer(0,360,0);
       	sensorAnalogPotentiometer1 = new AnalogPotentiometer(0,360,0);
+
       	BPUpotentiometer= new AnalogPotentiometer(1, 360, 0);
           backRightMotor = new CANTalon(8);
           
