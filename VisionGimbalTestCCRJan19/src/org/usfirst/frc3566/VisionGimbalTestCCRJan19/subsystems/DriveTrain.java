@@ -50,8 +50,8 @@ public class DriveTrain extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-    public void driveIt(double leftStick, double rightStick){
-    	robotDrive21.tankDrive(leftStick, rightStick);
+    public void driveIt(double X, double Y){
+    	robotDrive21.arcadeDrive(X, Y);
     	
     }
 }

@@ -50,7 +50,7 @@ public class DriveWithJoySticks extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	Robot.driveTrain.driveIt(Robot.oi.getLeftStick(), Robot.oi.getRightStick());
+    	Robot.driveTrain.driveIt(Robot.oi.getX(), Robot.oi.getY());
 
     	
     	// visionValue value = new visionValue(1); 

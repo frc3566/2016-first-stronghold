@@ -1,6 +1,7 @@
 package org.usfirst.frc3566.VisionGimbalTestCCRJan19.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import java.awt.Color;
@@ -9,13 +10,15 @@ import javax.swing.JPanel;
 
 import org.usfirst.frc3566.VisionGimbalTestCCRJan19.*;
 import org.usfirst.frc3566.VisionGimbalTestCCRJan19.commands.*;
+import org.usfirst.frc3566.VisionGimbalTestCCRJan19.subsystems.pid;
+import org.usfirst.frc3566.VisionGimbalTestCCRJan19.subsystems.testSendablee;
+
 import com.kauailabs.navx.frc.AHRS;
 /**
  *
  */
 public class navXValue extends Command {
-	AHRS ahrs;
-	JPanel jp= new JPanel();
+	AHRS ahrs; // testSendablee ts;
     public navXValue() {
     	
         // Use requires() here to declare subsystem dependencies
@@ -25,17 +28,20 @@ public class navXValue extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	ahrs = RobotMap.AHRS;
+    	//ts= new testSendablee();
     	ahrs.resetDisplacement();
     	SmartDashboard.putData("driveForward", new driveForward());
+    	SmartDashboard.putData("driveBackward", new driveBackward());
     	SmartDashboard.putData("gimble", new GimbalLeftHorizontalSweep());
-    	jp.setSize(100,100);
-    	jp.setBackground(Color.PINK);
-    	jp.setVisible(true);
+    	SmartDashboard.putData("PID System", new setPIDSystem(pid.DISTANCE));
+    	SmartDashboard.putData("SonarDrive", new sonarDrive());
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
+    	SmartDashboard.putNumber("Angle", ahrs.getYaw()); 
     	SmartDashboard.putBoolean("Connected", ahrs.isConnected());
     	SmartDashboard.putBoolean("Calibartting", ahrs.isCalibrating());
     	SmartDashboard.putNumber("Displacement X: " , ahrs.getDisplacementX());
@@ -49,9 +55,9 @@ public class navXValue extends Command {
     	SmartDashboard.putNumber("Acceleration Z: " , ahrs.getRawAccelZ());
 
     	SmartDashboard.putNumber("OiYAxis", Robot.oi.logitechXBox.getRawAxis(1));
-    	SmartDashboard.putNumber("OiZAxis", Robot.oi.logitechXBox.getRawAxis(2));
     	SmartDashboard.putNumber("OiXAxis", Robot.oi.logitechXBox.getRawAxis(0));
-    	
+    	SmartDashboard.putNumber("Z Axis", Robot.oi.logitechXBox.getRawAxis(2));
+    	//SmartDashboard.putData("testSend", ts);
     	/*\
     	 *Raw Axis 0 = X valuer
     	 *Raw Axis 1 = Y Values

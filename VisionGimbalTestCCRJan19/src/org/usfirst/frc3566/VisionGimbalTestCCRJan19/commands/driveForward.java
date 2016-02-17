@@ -17,7 +17,7 @@ public class driveForward extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     //obot.driveTrain.driveIt(.5,.5);
-      	this.setTimeout(.8);
+      	this.setTimeout(1);
     	
     }
 
