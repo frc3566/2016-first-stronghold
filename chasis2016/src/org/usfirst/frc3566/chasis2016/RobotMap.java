@@ -82,23 +82,25 @@ public class RobotMap {
 
       	BPUpotentiometer= new AnalogPotentiometer(1, 360, 0);
           backRightMotor = new CANTalon(8);
+          LiveWindow.addActuator("Wheels", "Back Right CIM", backRightMotor);
           
-          LiveWindow.addActuator("Subsystem 1", "CAN Talon 8", backRightMotor);
+          backLeftMotor = new CANTalon(7);
+          LiveWindow.addActuator("Wheels", "Back Left CIM", backLeftMotor);
           
           frontLeftMotor = new CANTalon(2);
-          LiveWindow.addActuator("Subsystem 1", "CAN Talon 2", frontLeftMotor);
+          LiveWindow.addActuator("Wheels", "Front Left CIM", frontLeftMotor);
           
           frontRightMotor = new CANTalon(0);
-          LiveWindow.addActuator("Subsystem 1", "CAN Talon 0", frontRightMotor);
+          LiveWindow.addActuator("Wheels", "Front Right CIM", frontRightMotor);
           
           frontSteering = new CANTalon(1);
-          LiveWindow.addActuator("Subsystem 1", "CAN Talon 1", frontSteering);
+          LiveWindow.addActuator("Steering", "Front Steering SnowBlower", frontSteering);
           
           backSteering = new CANTalon(3);
-          LiveWindow.addActuator("Subsystem 1", "CAN Talon 3", backSteering);
+          LiveWindow.addActuator("Steering", "Back Steering SnowBlower", backSteering);
           
           pickUpBall = new CANTalon(4);
-          LiveWindow.addActuator("Subsystem1", "CAN Talon 4", pickUpBall);
+          LiveWindow.addActuator("BPU", "Ball Picker Upper", pickUpBall);
           
           driveTrainRobot4 = new RobotDrive (backLeftMotor, frontLeftMotor, backRightMotor, frontRightMotor);
     
