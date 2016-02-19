@@ -19,11 +19,11 @@ public class ballPickerUpper extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void liftup(){
-    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED);
+    public void liftdown(){
+    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*.65);
     }
     
-    public void liftdown(){
+    public void liftup(){
     	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*-1);
     }
     

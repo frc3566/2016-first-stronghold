@@ -18,6 +18,7 @@ public class putsmartDashboard extends Command{
 	protected void execute() {
 		SmartDashboard.putNumber("LinearPotFront", RobotMap.steeringAnalogPotentiometerFRONT.get());
 		SmartDashboard.putNumber("LinearPotBack", RobotMap.steeringAnalogPotentiometerBACK.get());
+		SmartDashboard.putNumber("BPU Potentiometer" , RobotMap.BPUpotentiometer.get());
 	}
 
 	@Override
