@@ -64,8 +64,28 @@ public class driveTrain extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     public void driveIt (double Y, double X){
-    	robotDrive4.arcadeDrive(Y,X);;
+    	//robotDrive4.arcadeDrive(X,Y);;
+    	//check x values for robot, see if they are same as the d2 values 
     }
+    
+    public void d2 (double s){
+    	
+    	cANTalon1.set(s * -1.0);
+    	cANTalon2.set(s);
+    	cANTalon3.set(s * -1.0);
+    	cANTalon4.set(s);
+    	
+    }
+    
+  public void d2Stop (double s){
+    //	set d2stop everytime after d2 is not called 
+    	cANTalon1.set(0.0);
+    	cANTalon2.set(0.0);
+    	cANTalon3.set(0.0);
+    cANTalon4.set(0.0);
+    	//call this after d2 equals 0 
+    }
+    
     
     
 }

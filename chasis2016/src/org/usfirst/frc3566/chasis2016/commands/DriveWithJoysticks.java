@@ -58,7 +58,7 @@ public class DriveWithJoysticks extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.driveTrain.driveIt(Robot.oi.getY(), 0);
+		Robot.driveTrain.d2(Robot.oi.getY());
 		// TODO Auto-generated method stub
 		
 	}
