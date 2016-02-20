@@ -14,8 +14,10 @@ package org.usfirst.frc3566.chasis2016.commands;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3566.chasis2016.Robot;
+import org.usfirst.frc3566.chasis2016.RobotMap;
 import org.usfirst.frc3566.chasis2016.subsystems.*;
 
 /**
@@ -58,20 +60,17 @@ public class DriveWithJoysticks extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.driveTrain.d2(Robot.oi.getY());
-		// TODO Auto-generated method stub
-		
+		//Robot.driveTrain.driveTimmyTimer2(Robot.oi.getY());
+		Robot.driveTrain.drive2(Robot.oi.getY());
 	}
 
 	@Override
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
+			return false;
 	}
 
 	@Override
 	protected void end() {
-		// TODO Auto-generated method stub
 		
 	}
 

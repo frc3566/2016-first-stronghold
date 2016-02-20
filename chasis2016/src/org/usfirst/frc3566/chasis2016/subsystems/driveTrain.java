@@ -11,6 +11,7 @@
 
 package org.usfirst.frc3566.chasis2016.subsystems;
 
+import org.usfirst.frc3566.chasis2016.Robot;
 import org.usfirst.frc3566.chasis2016.RobotMap;
 import org.usfirst.frc3566.chasis2016.commands.*;
 import edu.wpi.first.wpilibj.CANTalon;
@@ -68,24 +69,60 @@ public class driveTrain extends Subsystem {
     	//check x values for robot, see if they are same as the d2 values 
     }
     
-    public void d2 (double s){
+    
+    public void drive2(double speed){
     	
-    	cANTalon1.set(s * -1.0);
-    	cANTalon2.set(s);
-    	cANTalon3.set(s * -1.0);
-    	cANTalon4.set(s);
+    	 cANTalon1.set(speed * -1.0);
+    	cANTalon2.set(speed * 1.0);
+    	  cANTalon3.set(speed * -1.0); 
+    	  cANTalon4.set(speed * 1.0);
+    	
+    	
     	
     }
     
-  public void d2Stop (double s){
+    public void driveTimmyTimer2 (double s){
+    	if(s>=0.2){
+    	cANTalon1.set(Math.sqrt(s) * -1.0);
+    	cANTalon2.set(Math.sqrt(s));
+    	cANTalon3.set(Math.sqrt(s) * -1.0);
+    	cANTalon4.set(Math.sqrt(s));
+    	}else if(s<-0.2){
+        cANTalon1.set(Math.sqrt(-s));
+        cANTalon2.set(Math.sqrt(-s)* -1.0);
+        cANTalon3.set(Math.sqrt(-s));
+        cANTalon4.set(Math.sqrt(-s)* -1.0);
+        
+    	}else{
+    		cANTalon1.enableBrakeMode(true);
+    		cANTalon2.enableBrakeMode(true);
+    		cANTalon3.enableBrakeMode(true);
+    		cANTalon4.enableBrakeMode(true);
+    		
+    	}
+    }
+    
+  public void d2Stop (){
     //	set d2stop everytime after d2 is not called 
-    	cANTalon1.set(0.0);
-    	cANTalon2.set(0.0);
-    	cANTalon3.set(0.0);
-    cANTalon4.set(0.0);
+	  cANTalon1.set(0.0);
+  	  cANTalon2.set(0.0);
+   	  cANTalon3.set(0.0);
+      cANTalon4.set(0.0);
     	//call this after d2 equals 0 
     }
     
+/* public void combocombo5 (double potValue){
+	double Zvalue=Robot.oi.joystick1.getZ();
+		double a=9.7; double range=0.5;
+		if(RobotMap.steeringAnalogPotentiometerFRONT.get()>a+range ){
+			RobotMap.frontSteering.set(-0.2);
+		}else if (RobotMap.steeringAnalogPotentiometerFRONT.get()< a-range){
+			RobotMap.frontSteering.set(0.2);
+		}else{
+			Robot.windowControl.frontWindowStopTurning();
+			System.out.println("inRange!!!!!"+a+" "+range);
+		}
+ }*/
     
     
 }
