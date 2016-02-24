@@ -13,7 +13,7 @@ public class recenterFrontWheel extends Command{
 	@Override
 	protected void initialize() {
 		//front wheel range: 6.5-11.5
-		a=RobotMap.linearFRONTCenter; range=0.5;
+		a=RobotMap.LINEAR_FRONT_CENTER; range=0.5;
 		inRange= false;
 	}
 
@@ -27,7 +27,7 @@ public class recenterFrontWheel extends Command{
 		//	inRange=true;
 		}else{
 			System.out.println("inRange!!!!!"+a+" "+range);
-			inRange=false;
+			inRange=true;
 		}
 		
 	}

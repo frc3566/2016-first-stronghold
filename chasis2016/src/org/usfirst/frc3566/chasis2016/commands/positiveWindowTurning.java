@@ -3,6 +3,7 @@ package org.usfirst.frc3566.chasis2016.commands;
 
 
 import org.usfirst.frc3566.chasis2016.Robot;
+import org.usfirst.frc3566.chasis2016.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,7 +12,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class positiveWindowTurning extends Command {
 	//by the way, the positive here means it's going left, not which set of wheels it controls
-	int backOrFront=0;
+	int backOrFront=0; 
+	public static final double MINIMUM_BACK=2.3;
     public positiveWindowTurning(int a) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -20,7 +22,7 @@ public class positiveWindowTurning extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if (backOrFront==-1){
+    	if (backOrFront==-1 && RobotMap.steeringAnalogPotentiometerBACK.get()>=MINIMUM_BACK){
         	Robot.windowControl.backWindowLeftTurning();
         	}else if(backOrFront==1){
         		Robot.windowControl.frontWindowLeftTurning();

@@ -49,9 +49,9 @@ public class driveTrain extends Subsystem {
     private final CANTalon cANTalon4 = RobotMap.frontRightMotor;
     private final CANTalon cANTalon5 = RobotMap.frontSteering;
     private final CANTalon cANTalon6 = RobotMap.backSteering;
-
+    private final CANTalon bu = RobotMap.pickUpBall;
     private final RobotDrive robotDrive4 = RobotMap.driveTrainRobot4;
-
+    private final CANTalon bpu = RobotMap.pickUpBall;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -71,7 +71,7 @@ public class driveTrain extends Subsystem {
     
     
     public void drive2(double speed){
-    	
+    
     	 cANTalon1.set(speed * -1.0);
     	cANTalon2.set(speed * 1.0);
     	  cANTalon3.set(speed * -1.0); 
@@ -80,6 +80,15 @@ public class driveTrain extends Subsystem {
     	
     	
     }
+   /* public void driveTimmyTitimer2 (double RocheBox){
+    	cANTalon1.set(1);
+    	cANTalon2.set(1);
+    	cANTalon3.set(1);
+    	cANTalon4.set(1);
+    	cANTalon5.set(1);
+    	cANTalon6.set(1);
+    	
+    }*/
     
     public void driveTimmyTimer2 (double s){
     	if(s>=0.2){
@@ -101,7 +110,29 @@ public class driveTrain extends Subsystem {
     		
     	}
     }
-    
+    public void bpuMovement(double speed){
+    	bpu.set(speed);
+    }
+    public void threeWheelDrive (double speed){
+    	if (speed> 0){
+
+        	cANTalon1.set(0.2);
+        	cANTalon2.set(speed * -1);
+        	cANTalon3.set(speed);
+        	cANTalon4.set(speed * -1 );
+    	} else if (speed<-0.2){
+
+        	cANTalon1.set(speed);
+        	cANTalon2.set(0);
+        	cANTalon3.set(speed);
+        	cANTalon4.set(speed * -1 );
+    	} else {
+    		cANTalon1.enableBrakeMode(true);
+    		cANTalon2.enableBrakeMode(true);
+    		cANTalon3.enableBrakeMode(true);
+    		cANTalon4.enableBrakeMode(true);
+    	}
+    }
   public void d2Stop (){
     //	set d2stop everytime after d2 is not called 
 	  cANTalon1.set(0.0);
@@ -110,6 +141,13 @@ public class driveTrain extends Subsystem {
       cANTalon4.set(0.0);
     	//call this after d2 equals 0 
     }
+  public void creepDrive (double speed) {
+	  cANTalon1.set(0.2);
+	  cANTalon2.set(0.2);
+	  cANTalon3.set(0.2);
+	  cANTalon4.set(0.2);
+  }
+  
     
 /* public void combocombo5 (double potValue){
 	double Zvalue=Robot.oi.joystick1.getZ();

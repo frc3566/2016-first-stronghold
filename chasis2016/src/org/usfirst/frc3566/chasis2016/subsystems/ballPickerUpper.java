@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ballPickerUpper extends Subsystem {
 	private final CANTalon pickUpBall = RobotMap.pickUpBall;
+	private final CANTalon pickUpBall2 = RobotMap.ballPickerUpper2;
     double angle;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -20,11 +21,13 @@ public class ballPickerUpper extends Subsystem {
     }
     
     public void liftdown(){
-    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*.65);
+    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*1);
+    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED * -1);
     }
     
     public void liftup(){
     	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*-1);
+    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED*1);
     }
     
     public void stopBPU(){
