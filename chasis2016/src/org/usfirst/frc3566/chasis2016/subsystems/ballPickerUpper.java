@@ -35,7 +35,7 @@ public class ballPickerUpper extends Subsystem {
     }
     
     public double getPotentiometerValue(){
-    	angle=RobotMap.BPUpotentiometer.get();
+    	angle=RobotMap.BPUencoder.get();
     	return angle;
     }
 }

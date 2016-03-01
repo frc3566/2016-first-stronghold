@@ -52,6 +52,7 @@ public class driveTrain extends Subsystem {
     private final CANTalon bu = RobotMap.pickUpBall;
     private final RobotDrive robotDrive4 = RobotMap.driveTrainRobot4;
     private final CANTalon bpu = RobotMap.pickUpBall;
+    private final CANTalon bpu2 = RobotMap.ballPickerUpper2;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -112,26 +113,23 @@ public class driveTrain extends Subsystem {
     }
     public void bpuMovement(double speed){
     	bpu.set(speed);
+    	bpu2.set(speed*-1);
+    	
     }
     public void threeWheelDrive (double speed){
-    	if (speed> 0){
+    	if (speed> 0.1){
 
-        	cANTalon1.set(0.2);
-        	cANTalon2.set(speed * -1);
+        	cANTalon1.set(speed*-1);
+        	cANTalon2.set(speed* -1 );
         	cANTalon3.set(speed);
-        	cANTalon4.set(speed * -1 );
-    	} else if (speed<-0.2){
+        	cANTalon4.set(speed * -1);
+    	} else if (speed<-0.1){
 
         	cANTalon1.set(speed);
-        	cANTalon2.set(0);
-        	cANTalon3.set(speed);
-        	cANTalon4.set(speed * -1 );
-    	} else {
-    		cANTalon1.enableBrakeMode(true);
-    		cANTalon2.enableBrakeMode(true);
-    		cANTalon3.enableBrakeMode(true);
-    		cANTalon4.enableBrakeMode(true);
-    	}
+        	cANTalon2.set(speed);
+        	cANTalon3.set(speed*-1);
+        	cANTalon4.set(speed );
+    	} 
     }
   public void d2Stop (){
     //	set d2stop everytime after d2 is not called 
