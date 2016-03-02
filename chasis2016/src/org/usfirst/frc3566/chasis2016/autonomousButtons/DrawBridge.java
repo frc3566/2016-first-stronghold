@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class DrawBridge extends CommandGroup {
 
     public DrawBridge() {
-    	pinmode( 0 , 1	);
     	
     	// Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

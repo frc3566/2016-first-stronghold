@@ -8,12 +8,15 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class BPUgoTo extends Command {
+	
 	protected int position_num=-1; double range= 3; boolean inRange=false;
+	double bpuSpeed;
 	//bottom:1, middle:2, top:3
-    public BPUgoTo(int num) {
+    public BPUgoTo(int num, double bpuspeed) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	position_num=num;
+    	bpuSpeed = bpuspeed;
     }
 
     // Called just before this Command runs the first time
@@ -22,27 +25,28 @@ public class BPUgoTo extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
     	double currValue= RobotMap.BPUencoder.get();
     	if(position_num==1){
     	if(currValue > RobotMap.BPU_MIN + range){
-    	RobotMap.pickUpBall.set(-0.3);
-		RobotMap.ballPickerUpper2.set(0.3);
+    	RobotMap.pickUpBall.set(-bpuSpeed);
+		RobotMap.ballPickerUpper2.set(bpuSpeed);
 	//	inRange=true;
 	}else if (currValue< RobotMap.BPU_MIN- range){
-		RobotMap.pickUpBall.set(0.3);
-		RobotMap.ballPickerUpper2.set(-0.3);	//	inRange=true;
+		RobotMap.pickUpBall.set(bpuSpeed);
+		RobotMap.ballPickerUpper2.set(-bpuSpeed);	//	inRange=true;
 	}else{
 		System.out.println("BPUinRange!!osition 1: Min");
 		inRange=true;
 	}
     	}else if(position_num==2){
     		if(currValue > RobotMap.BPU_CENTER + range){
-    	    	RobotMap.pickUpBall.set(-0.3);
-    			RobotMap.ballPickerUpper2.set(0.3);
+    	    	RobotMap.pickUpBall.set(-bpuSpeed);
+    			RobotMap.ballPickerUpper2.set(bpuSpeed);
     		//	inRange=true;
     		}else if (currValue< RobotMap.BPU_CENTER- range){
-    			RobotMap.pickUpBall.set(0.3);
-    			RobotMap.ballPickerUpper2.set(-0.3);	
+    			RobotMap.pickUpBall.set(bpuSpeed);
+    			RobotMap.ballPickerUpper2.set(-bpuSpeed);	
     		}else{
     			System.out.println("BPUinRange!!osition 2: Center");
     			inRange=true;
@@ -50,12 +54,12 @@ public class BPUgoTo extends Command {
     		}
     	}else if(position_num==3){
     		if(currValue > RobotMap.BPU_MAX + range){
-    	    	RobotMap.pickUpBall.set(-0.3);
-    			RobotMap.ballPickerUpper2.set(0.3);
+    	    	RobotMap.pickUpBall.set(-bpuSpeed);
+    			RobotMap.ballPickerUpper2.set(bpuSpeed);
     		//	inRange=true;
     		}else if (currValue< RobotMap.BPU_MAX- range){
-    			RobotMap.pickUpBall.set(0.3);
-    			RobotMap.ballPickerUpper2.set(-0.3);	//	inRange=true;
+    			RobotMap.pickUpBall.set(bpuSpeed);
+    			RobotMap.ballPickerUpper2.set(-bpuSpeed);	//	inRange=true;
     		}else{
     			System.out.println("BPUinRange!!osition 3: Max");
     			inRange=true;

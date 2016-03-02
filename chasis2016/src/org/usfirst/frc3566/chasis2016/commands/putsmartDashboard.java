@@ -22,7 +22,7 @@ public class putsmartDashboard extends Command{
 		int POVvalue = Robot.oi.xBoxController.getPOV();
 		if (POVvalue == 0 || POVvalue == 90 || POVvalue == 180){
 			BPUgoTo BPUGoTo;
-			BPUGoTo = new BPUgoTo((POVvalue+90)/90);
+			BPUGoTo = new BPUgoTo((POVvalue+90)/90, 0.3);
 			BPUGoTo.start();
 		}
 		}

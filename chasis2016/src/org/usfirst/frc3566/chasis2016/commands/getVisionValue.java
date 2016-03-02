@@ -1,6 +1,9 @@
-package org.usfirst.frc3566.VisionGimbalTestCCRJan19.commands;
+package org.usfirst.frc3566.chasis2016.commands;
 
-import org.usfirst.frc3566.VisionGimbalTestCCRJan19.Robot;
+
+
+import org.usfirst.frc3566.chasis2016.Robot;
+import org.usfirst.frc3566.chasis2016.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -52,6 +55,13 @@ public class getVisionValue extends Command{
 			     		   cameraHstrategy="null";
 			     	   }
 			     	}
+		        
+		        if(cameraHstrategy.equals("inRange")&& robotAstrategy.equals("inRange")){
+		        	RobotMap.blueLight.set(true);
+		        }else{
+		        	RobotMap.blueLight.set(false);
+		        }
+		        
 		   /* we're not doing vertical gimbal so no Y anymore
 		        for (double Y: centerY) {
 		        	 SmartDashboard.putNumber("centerY", Y);
