@@ -1,15 +1,14 @@
 package org.usfirst.frc3566.chasis2016.commands;
 
-
-
 import org.usfirst.frc3566.chasis2016.Robot;
-import org.usfirst.frc3566.chasis2016.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/**
+ *
+ */
 public class getVisionValue extends Command{
-	
 	public static String cameraHstrategy="null", cameraVstrategy="null", robotAstrategy="null";
 	
 	public getVisionValue() { 
@@ -18,7 +17,8 @@ public class getVisionValue extends Command{
 
 	@Override
 	protected void initialize() {
-				
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -27,16 +27,16 @@ public class getVisionValue extends Command{
 		double[] defaultValue = new double[0];
 		double[] areas = Robot.table.getNumberArray("area", defaultValue); 
 		double[] centerX = Robot.table.getNumberArray("centerX", defaultValue);
-	//	double[] centerY = Robot.table.getNumberArray("centerY", defaultValue);
+		double[] centerY = Robot.table.getNumberArray("centerY", defaultValue);
 		     
 		     
-		        for (double area: areas) {//area range 900-1100
+		        for (double area: areas) {
 		     	   SmartDashboard.putNumber("area", area);
-		     	   if(area<=900){
+		     	   if(area<=200){
 		     		   robotAstrategy="forward";
-		     	   }else if(area>1100){
+		     	   }else if(area>260){
 		     		  robotAstrategy="backward";
-		     	   }else if(area>900 && area<=1100){
+		     	   }else if(area>200 && area<=260){
 		     		   robotAstrategy="inRange";
 		     	   }else{
 		     		   robotAstrategy="null";
@@ -45,40 +45,33 @@ public class getVisionValue extends Command{
 		 
 		        for (double X: centerX) {
 		        	 SmartDashboard.putNumber("centerX", X);
-		        	 if(X<=150){
+		        	 if(X<=185){
 			     		   cameraHstrategy="left";
-			     	   }else if(X>170){
+			     	   }else if(X>197){
 			     		  cameraHstrategy="right";
-			     	   }else if(X>150 && X<=170){
+			     	   }else if(X>185 && X<=197){
 			     		   cameraHstrategy="inRange";
 			     	   }else{
 			     		   cameraHstrategy="null";
 			     	   }
 			     	}
-		        
-		        if(cameraHstrategy.equals("inRange")&& robotAstrategy.equals("inRange")){
-		        	RobotMap.blueLight.set(true);
-		        }else{
-		        	RobotMap.blueLight.set(false);
-		        }
-		        
-		   /* we're not doing vertical gimbal so no Y anymore
+		   
 		        for (double Y: centerY) {
 		        	 SmartDashboard.putNumber("centerY", Y);
-		        	 if(Y<=120){
+		        	 if(Y<=126){
 			     		   cameraVstrategy="upward";
-			     	   }else if(Y>150){
+			     	   }else if(Y>135){
 			     		  cameraVstrategy="downward";
-			     	   }else if(Y>120 && Y<=150){
+			     	   }else if(Y>126 && Y<=135){
 			     		   cameraVstrategy="inRange";
 			     	   }else{
 			     		   cameraVstrategy="null";
 			     	   }
 			     	}
-		       */
+		       
 		        SmartDashboard.putString("robotAstrategy", robotAstrategy);
 		        SmartDashboard.putString("cameraHstrategy", cameraHstrategy);
-		      //  SmartDashboard.putString("cameraVstrategy", cameraVstrategy);
+		       // SmartDashboard.putString("cameraVstrategy", cameraVstrategy);
 		      //  SmartDashboard.
 	}
 
@@ -102,4 +95,3 @@ public class getVisionValue extends Command{
 
 
 }
-
