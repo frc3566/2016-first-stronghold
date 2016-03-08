@@ -13,14 +13,14 @@ public class catapult extends Subsystem{
 	}
 	
 	public void catapultTurnPos(){
-		RobotMap.catapult.set(RobotMap.CATAPULT_SPEED);
+		RobotMap.CatapultBIGGearWinch.set(RobotMap.CATAPULT_SPEED);
 	}
 	
 	public void catapultTurnNeg(){
-		RobotMap.catapult.set(RobotMap.CATAPULT_SPEED * -1);
+		RobotMap.CatapultBIGGearWinch.set(RobotMap.CATAPULT_SPEED * -1);
 	}
 	
 	public void catapultStop(){
-		RobotMap.catapult.set(0);
+		RobotMap.CatapultBIGGearWinch.set(0);
 	}
 }

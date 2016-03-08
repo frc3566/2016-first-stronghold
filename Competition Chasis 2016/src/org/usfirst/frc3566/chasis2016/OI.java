@@ -18,24 +18,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 /**
- *  (checkmark)Test if BPU is still working or not
- *  (?)Check if BPUgoTo is working properly
+ * test reverse button
+ * make it so robot recenters based on z axis
  * 
- * (checkmark) Fix catapult talons to see if that fixes it 
+ * driving practice
+ * make it so driver knows which direction wheels either camera or smart dashboard
+ * make a better autonomous
  * 
- * Fix the steering, hard for the driver to know how the wheels are pointed
- * (checkmark)Combine into 2 joystick BPU + Catpult
- * Do something with catapult
- * Get a practice match
- * In practice match, measure starting distances and defences 
- * Check shoowting values with grip, see if reflective tape actually works
- *  In a perfect world, team 3566 will go to Boston Yay. Even in a perfect world, we will never go to St. Louis
- *  --Check BPU values
- *  Check all the potentiometers and make sure they are working correctely
- * Fix the camera to the catapult belt
- * Make a command to aim the catapult and shoot --Not of high priority 
+ * 
+ * 
+ *
+ 
+ * 
  * Don't blow up the robot
- * Joystick info: xboxcontroller is for bpu, and logitech is catapult
+ * 
  * 
  */
 
@@ -109,6 +105,8 @@ public class OI {
     public JoystickButton b12BigWinchDogGearEngage;
     public JoystickButton b9CatapultWithJoysticks;
     public Joystick logitechXBoxType;
+    public JoystickButton reverseButton; 
+    
     
     //catapult end
     
@@ -121,17 +119,18 @@ public class OI {
         joystick1 = new Joystick(0);
         xBoxController = new Joystick(1); 
     	logitechXBoxType = new Joystick(2); 
-    	
+    	reverseButton = new JoystickButton(joystick1, 1000000);//////**********!!!!!!
+    	reverseButton.whenPressed(new reverseDriving());
+
     	//Right now we have three joysticks!! which is not good
     	//we'd have to combine the second joystick and the third one.
     	//if you see this remind me to change it
      
         solenoid = new JoystickButton(xBoxController, 8 );// 8 = start button
-        solenoid.whenPressed(new testSolenoid());
         
-        frontWindowMotorPositive = new JoystickButton(joystick1, 7);
+        frontWindowMotorPositive = new JoystickButton(joystick1, 8);
         frontWindowMotorPositive.whileHeld(new positiveWindowTurning(1));
-        frontWindowMotorNegative = new JoystickButton(joystick1, 8);
+        frontWindowMotorNegative = new JoystickButton(joystick1, 7);
         frontWindowMotorNegative.whileHeld(new negativeWindowTurning(1));
         
         backWindowMotorPositive = new JoystickButton(joystick1, 9);
@@ -150,9 +149,9 @@ public class OI {
         bothWindowMotorNegative.whileHeld(new negativeWindowTurning(-1));
         
         BPUliftUp = new JoystickButton(xBoxController, 1);
-        BPUliftUp.whileHeld(new BPUliftUp());
+        BPUliftUp.whileHeld(new BPUdown());
         BPUliftDown = new JoystickButton(xBoxController, 2);
-        BPUliftDown.whileHeld(new BPUliftDown());
+        BPUliftDown.whileHeld(new BPUup());
         
         reCenterFront = new JoystickButton(joystick1, 5);
         reCenterFront.whenPressed(new recenterFrontWheel());
@@ -221,7 +220,7 @@ public class OI {
     	
     }
     
-    public double getLogitech3Axis(){
+    public double getLogitechRawAxis3(){
     	
     	return logitechXBoxType.getRawAxis(3);
     }
@@ -245,10 +244,13 @@ public class OI {
     public double getxBoxY(){
     	return xBoxController.getRawAxis(1);
     }
+    /*public double getLogitech3Axis() {
+    	return logitechXBoxType.getRawAxis(3);
+    }*/
     
-    public double getLogitechAxisY(){
+    public double getLogitechRawAxis1(){
     	
-    	return joystick1.getY();
+    	return logitechXBoxType.getRawAxis(1);
     }
     
     public double getWinchAxis() {

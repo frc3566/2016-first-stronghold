@@ -60,12 +60,10 @@ public class DriveWithJoysticks extends Command {
 
 	@Override
 	protected void execute() {
-		//Robot.driveTrain.driveTimmyTimer2(Robot.oi.getY());
-		Robot.driveTrain.drive2(Robot.oi.getY());
-		Robot.driveTrain.threeWheelDrive(Robot.oi.getZ());
-		Robot.driveTrain.bpuMovement(Robot.oi.getxBoxY());
+		Robot.driveTrain.driveIt(Robot.oi.getY());
+		Robot.bpu.BPUmovement(Robot.oi.getxBoxY());
 		
-		
+		Robot.driveTrain.wheelSteering(Robot.oi.getX(), Robot.driveTrain.getReversedState());
 	}
 
 	@Override

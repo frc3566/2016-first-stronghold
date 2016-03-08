@@ -22,7 +22,7 @@ public class contractWench extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
 
-    	RobotMap.RulerWinch.set(RobotMap.WENCH_SPEED* -1);
+    	RobotMap.rulerWinchEndGameRulerWinch.set(RobotMap.WENCH_SPEED* -1);
     	//helloworld
     	
     }

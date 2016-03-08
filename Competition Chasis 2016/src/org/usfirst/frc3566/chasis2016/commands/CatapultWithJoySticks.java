@@ -59,7 +59,7 @@ public class CatapultWithJoySticks extends Command {
     	
     	//Catapult trigger test
     	
-    	Robot.catapultWinchAimer.runCatapultTrigger(Robot.oi.getLogitech3Axis());
+    //	Robot.catapultWinchAimer.runCatapultTrigger(Robot.oi.getLogitech3Axis());
     	
     	Robot.catapultWinchAimer.checkColorSensor();
     	

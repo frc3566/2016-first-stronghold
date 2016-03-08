@@ -21,7 +21,7 @@ public class launchWinch extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
 
-    	RobotMap.RulerWinch.set(RobotMap.WENCH_SPEED);
+    	RobotMap.rulerWinchEndGameRulerWinch.set(RobotMap.WENCH_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()

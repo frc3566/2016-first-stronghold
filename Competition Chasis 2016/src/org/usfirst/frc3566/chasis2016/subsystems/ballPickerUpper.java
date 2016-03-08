@@ -11,9 +11,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ballPickerUpper extends Subsystem {
 	private final CANTalon pickUpBall = RobotMap.pickUpBall;
 	private final CANTalon pickUpBall2 = RobotMap.ballPickerUpper2;
+	//the two bpu motors are flipped, which means they need opposite power to go in the same direction
     double angle;
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -21,17 +20,23 @@ public class ballPickerUpper extends Subsystem {
     }
     
     public void liftdown(){
-    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*1);
+    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED);
     	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED * -1);
     }
     
     public void liftup(){
     	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*-1);
-    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED*1);
+    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED);
+    }
+    
+    public void BPUmovement(double bpuSpeed){
+    	pickUpBall.set(bpuSpeed);
+    	pickUpBall2.set(bpuSpeed*-1);
     }
     
     public void stopBPU(){
     	 pickUpBall.set(0);
+    	 pickUpBall2.set(0);
     }
     
    // public double getPotentiometerValue(){

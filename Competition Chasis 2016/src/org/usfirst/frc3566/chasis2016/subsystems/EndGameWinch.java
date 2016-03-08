@@ -14,7 +14,7 @@ public class EndGameWinch extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-	  private final CANTalon winchActivate = RobotMap.endgamewinch;
+	  private final CANTalon winchActivate = RobotMap.rulerWinchEndGameRulerWinch;
 	  
 	  
     public void initDefaultCommand() {

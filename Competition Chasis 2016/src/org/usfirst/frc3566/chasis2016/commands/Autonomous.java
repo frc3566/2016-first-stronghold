@@ -5,164 +5,141 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
+
 public class Autonomous extends CommandGroup {
     
 	public Autonomous(int num) {
-		if (num == 99 ) {// Put down bpu for 2 seconds
-		addSequential(new timyDrive(.1, 1));	
-		}
-		if (num == 98 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.2, 1));	
-			}
-		if (num == 97 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.3, 1));	
-			}
-		if (num == 96 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.4, 1));	
-			}
-		if (num == 95 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.5, 1));	
-			}
-		if (num == 94 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.6, 1));	
-			}
-		if (num == 93 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.7, 1));	
-			}
-		if (num == 92 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.8, 1));	
-			}
-		if (num == 91 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.9, 1));	
-			}
-		if (num == 90 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(1, 1));	
-			}
-		/*
-		 * 	if (num == 99 ) {// Put down bpu for 2 seconds
-		addSequential(new timyDrive(.1, 2));	
-		}
-		if (num == 98 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.2, 2));	
-			}
-		if (num == 97 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.3, 2));	
-			}
-		if (num == 96 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.4, 2));	
-			}
-		if (num == 95 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.5, 2));	
-			}
-		if (num == 94 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.6, 2));	
-			}
-		if (num == 93 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.7, 2));	
-			}
-		if (num == 92 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.8, 2));	
-			}
-		if (num == 91 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.9, 2));	
-			}
-		if (num == 90 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(1, 2));	
-			}
-		 * 
-		 */
-		/*
-		 * 	if (num == 99 ) {// Put down bpu for 2 seconds
-		addSequential(new timyDrive(.1, 4));	
-		}
-		if (num == 98 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.2, 4));	
-			}
-		if (num == 97 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.3, 4));	
-			}
-		if (num == 96 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.4, 4));	
-			}
-		if (num == 95 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.5, 4));	
-			}
-		if (num == 94 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.6, 4));	
-			}
-		if (num == 93 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.7, 4));	
-			}
-		if (num == 92 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.8, 4));	
-			}
-		if (num == 91 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(.9, 4));	
-			}
-		if (num == 90 ) {// Put down bpu for 2 seconds
-			addSequential(new timyDrive(1, 4));	
-			}
-		 */
-		
-		
-		
-		
-		
-		
-		
-			if (num==0){ // ChevaldeFries IDEAL AND PERFECt
-			addSequential(new timyDrive(.5, 2));
-			
-			
-		}
-		if (num==1){ // Drawbridge Never 
-			
 
-			addSequential(new timyDrive(.5, 2));
+			if (num==0){ //Cheval de Frise
+				System.out.println("autonomous: "+num+"started");
+				
+//				addSequential(new timyDrive(-1,2));
+			
+				System.out.println("autonomous: "+num+"ended");
 			
 		}
-		if (num == 2) { // Lowbar EASY PEASERY 
 
-			addSequential(new BPUgoTo(2, .1));
-			addSequential(new timyDrive(.5, 2));
-			addSequential(new BPUgoTo(1, .5));
-			addSequential(new BPUgoTo(3, .3));
-			//aim and fire at Mr. Wells
-			
-		}
-		if (num == 3) { // Moat EASY 
-			addSequential(new BPUgoTo(2, .1));
-			addSequential(new timyDrive(.5, 2));
-		}
-		
-		if (num == 4){ // Portcullis HARD
-			addSequential(new BPUgoTo(1, .1));
-			addSequential(new timyDrive(.5, 2));
-			addSequential(new BPUgoTo(3, .3));
-			addParallel(new timyDrive(.3, 4));
-			
-		}
-		
-		if (num == 5){ // Rampart Impossible
-			
+			if (num==1){//DrawBridge
+				System.out.println("autonomous: "+num+"started");
 
-			addSequential(new timyDrive(.5, 2));
+//				addSequential(new recenterBackWheels());
+//		        addParallel(new recenterFrontWheel());
+//		
+//				addSequential(new timyDrive(-0.5,1));
+//			
+				
+				System.out.println("autonomous: "+num+"ended");
+			
+			
+		}
+			if (num==2){//LowBar
+				System.out.println("autonomous: "+num+"started");
+				
+				addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(.6,3));
+		        addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(-.6,3));
+		        
+		        addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+
+		        addSequential(new driveStraight(.6,3));
+				
+		        
+//			
+				
+				System.out.println("autonomous: "+num+"ended");
+			
+			
+		}
+
+			if (num==3){//Moat
+				System.out.println("autonomous: "+num+"started");
+//
+				   addSequential(new recenterBackWheels());
+			        addParallel(new recenterFrontWheel());
+			        addSequential(new driveStraight(.3,2));
+			        addSequential(new recenterBackWheels());
+			        addParallel(new recenterFrontWheel());
+			        addSequential(new driveStraight(.9,2));
+//				
+//				addSequential(new timyDrive(.5,1));
+//			
+				System.out.println("autonomous: "+num+"ended");
+			
 		}
 			
-		if (num == 6 ){
-			addSequential(new BPUgoTo(2, .1));
-			addSequential(new timyDrive(.5, 2));
+		if (num==4){ //Portcullis
+			System.out.println("autonomous: "+num+"started");
 			
-		}
-		if (num == 7){ //RoughTerrain EASY even Jason can do this 
-			addSequential(new BPUgoTo(2, .1));
-			addSequential(new timyDrive(.5, 2));
+//			addSequential(new BPUgoTo(3, .2));
+//			addSequential (new BPUgoTo(1, .7));
+//			addSequential(new BPUgoTo(2,.3));
+//			addSequential(new timyDrive(.5, 1));
 			
+			System.out.println("autonomous: "+num+"ended");
 		}
 		
-		if (num ==8){ // Sallyport imposible 
+		
+		if (num == 5) { //Rampart
+			System.out.println("autonomous: "+num+"started");
 			
-			addSequential(new timyDrive(.5, 2));
+//			addSequential(new recenterBackWheels());
+//	        addParallel(new recenterFrontWheel());
+//			
+//			addSequential(new BPUdown());
+//			addSequential(new timyDrive(.3, 5));
+			System.out.println("autonomous: "+num+"ended");
+		}
+		
+		if (num == 6) { //RockWall
+			   addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(.3,2));
+		        addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(1,2));
+//			
+		}
+		
+		if (num == 7){ // Rough Terrain
+			System.out.println("autonomous: "+num+"started");
+			   addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(.3,2));
+		        addSequential(new recenterBackWheels());
+		        addParallel(new recenterFrontWheel());
+		        addSequential(new driveStraight(.6,2));
+//			
+//		System.out.println("autonomous: "+num+"ended");
+		}
+		
+		if (num == 8){ // SallyPort
+			System.out.println("autonomous: "+num+"started");
+//			addSequential(new timyDrive(.5, 2));
+			System.out.println("autonomous: "+num+"ended");
+		}
+			
+		if (num == 9){//Drive Slowly Forward
+			System.out.println("autonomous: "+num+"started");
+//			addSequential(new BPUgoTo(2, .1));
+//			addSequential(new timyDrive(.5, 2));
+			System.out.println("autonomous: "+num+"ended");
+		}
+		
+		if (num == 10){//Drive Slowly Backward
+			System.out.println("autonomous: "+num+"started");
+
+//			addSequential(new timyDrive(.65,6));
+			System.out.println("autonomous: "+num+"ended");
+		}
+		
+		if (num ==11){//Drive Full Speed Forward
+			System.out.println("autonomous: "+num+"started");
+//			addSequential(new timyDrive(.5, 2));
+			System.out.println("autonomous: "+num+"ended");
 		}
 		
 		

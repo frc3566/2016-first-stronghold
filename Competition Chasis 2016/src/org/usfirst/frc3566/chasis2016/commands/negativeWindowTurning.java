@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class negativeWindowTurning extends Command {
 	
-	public static final double MAXIMUM_BACK= 5.1;
+	public static final double MAXIMUM_BACK= 15.1; double MAXIMUM_FRONT= 123;//11
 int backOrFront = 0;//front is 1, and back is -1
     public negativeWindowTurning(int a) {
         // Use requires() here to declare subsystem dependencies
@@ -21,7 +21,7 @@ int backOrFront = 0;//front is 1, and back is -1
     protected void initialize() {
     	if (backOrFront==-1 && RobotMap.steeringAnalogPotentiometerBACK.get()<= MAXIMUM_BACK){
     	Robot.windowControl.backWindowRightTurning();
-    	}else if(backOrFront==1){
+    	}else if(backOrFront==1 && RobotMap.steeringAnalogPotentiometerFRONT.get()<=MAXIMUM_FRONT){
     		Robot.windowControl.frontWindowRightTurning();
     	}
     	//this.setTimeout(.3);
