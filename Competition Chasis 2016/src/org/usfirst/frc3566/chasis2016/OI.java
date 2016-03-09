@@ -106,7 +106,7 @@ public class OI {
     public JoystickButton b9CatapultWithJoysticks;
     public Joystick logitechXBoxType;
     public JoystickButton reverseButton; 
-    
+    public JoystickButton recenterBackAndFront;
     
     //catapult end
     
@@ -148,13 +148,17 @@ public class OI {
         bothWindowMotorNegative.whileHeld(new negativeWindowTurning(1));
         bothWindowMotorNegative.whileHeld(new negativeWindowTurning(-1));
         
+        recenterBackAndFront = new JoystickButton(joystick1, 1);
+        recenterBackAndFront.whileHeld(new recenterBackWheels());
+        recenterBackAndFront.whileHeld(new recenterFrontWheels());
+        
         BPUliftUp = new JoystickButton(xBoxController, 1);
         BPUliftUp.whileHeld(new BPUdown());
         BPUliftDown = new JoystickButton(xBoxController, 2);
         BPUliftDown.whileHeld(new BPUup());
         
         reCenterFront = new JoystickButton(joystick1, 5);
-        reCenterFront.whenPressed(new recenterFrontWheel());
+        reCenterFront.whenPressed(new recenterFrontWheels());
         
         reCenterBack = new JoystickButton(joystick1, 6);
         reCenterBack.whenPressed(new recenterBackWheels());

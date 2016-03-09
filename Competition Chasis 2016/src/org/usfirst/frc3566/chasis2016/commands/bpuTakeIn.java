@@ -1,13 +1,16 @@
 package org.usfirst.frc3566.chasis2016.commands;
 
+import org.usfirst.frc3566.chasis2016.RobotMap;
+
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class AlexSong extends Command {
-
-    public AlexSong() {
+public class bpuTakeIn extends Command {
+	private final CANTalon bpuFunction = RobotMap.BPUfunction;
+    public bpuTakeIn() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -18,6 +21,7 @@ public class AlexSong extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	bpuFunction.set(-1);
     }
 
     // Make this return true when this Command no longer needs to run execute()

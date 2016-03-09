@@ -19,6 +19,7 @@ public class putsmartDashboard extends Command{
 		double front=RobotMap.steeringAnalogPotentiometerFRONT.get();
 		double back =RobotMap.steeringAnalogPotentiometerBACK.get();
 		double encoder = RobotMap.BPUencoder.get();
+		
 		SmartDashboard.putNumber("LinearPotFront", front);
 		SmartDashboard.putNumber("LinearPotBack", back);
 		SmartDashboard.putNumber("BPU Potentiometer" , encoder);
@@ -38,6 +39,14 @@ public class putsmartDashboard extends Command{
 	}else{
 		SmartDashboard.putString("Back", "middle");
 	}
+	
+	int POVvalue = Robot.oi.xBoxController.getPOV();
+	if (POVvalue == 0 || POVvalue == 90 || POVvalue == 180){
+		BPUgoTo BPUGoTo;
+		BPUGoTo = new BPUgoTo((POVvalue+90)/90, 0.3);
+		BPUGoTo.start();
+	}
+	
 	
 		}
 		// create a button that makes it so that all four motors go at 100% 

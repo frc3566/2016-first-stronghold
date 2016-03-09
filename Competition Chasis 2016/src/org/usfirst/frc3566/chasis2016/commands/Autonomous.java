@@ -23,7 +23,7 @@ public class Autonomous extends CommandGroup {
 				System.out.println("autonomous: "+num+"started");
 
 //				addSequential(new recenterBackWheels());
-//		        addParallel(new recenterFrontWheel());
+//		        addParallel(new recenterFrontWheelss());
 //		
 //				addSequential(new timyDrive(-0.5,1));
 //			
@@ -36,14 +36,16 @@ public class Autonomous extends CommandGroup {
 				System.out.println("autonomous: "+num+"started");
 				
 				addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
+		        addParallel(new BPUdown());/////////
 		        addSequential(new driveStraight(.6,3));
 		        addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        
+		        addParallel(new recenterFrontWheels());
 		        addSequential(new driveStraight(-.6,3));
 		        
 		        addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
 
 		        addSequential(new driveStraight(.6,3));
 				
@@ -59,10 +61,10 @@ public class Autonomous extends CommandGroup {
 				System.out.println("autonomous: "+num+"started");
 //
 				   addSequential(new recenterBackWheels());
-			        addParallel(new recenterFrontWheel());
+			        addParallel(new recenterFrontWheels());
 			        addSequential(new driveStraight(.3,2));
 			        addSequential(new recenterBackWheels());
-			        addParallel(new recenterFrontWheel());
+			        addParallel(new recenterFrontWheels());
 			        addSequential(new driveStraight(.9,2));
 //				
 //				addSequential(new timyDrive(.5,1));
@@ -87,7 +89,7 @@ public class Autonomous extends CommandGroup {
 			System.out.println("autonomous: "+num+"started");
 			
 //			addSequential(new recenterBackWheels());
-//	        addParallel(new recenterFrontWheel());
+//	        addParallel(new recenterFrontWheels());
 //			
 //			addSequential(new BPUdown());
 //			addSequential(new timyDrive(.3, 5));
@@ -96,10 +98,10 @@ public class Autonomous extends CommandGroup {
 		
 		if (num == 6) { //RockWall
 			   addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
 		        addSequential(new driveStraight(.3,2));
 		        addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
 		        addSequential(new driveStraight(1,2));
 //			
 		}
@@ -107,10 +109,10 @@ public class Autonomous extends CommandGroup {
 		if (num == 7){ // Rough Terrain
 			System.out.println("autonomous: "+num+"started");
 			   addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
 		        addSequential(new driveStraight(.3,2));
 		        addSequential(new recenterBackWheels());
-		        addParallel(new recenterFrontWheel());
+		        addParallel(new recenterFrontWheels());
 		        addSequential(new driveStraight(.6,2));
 //			
 //		System.out.println("autonomous: "+num+"ended");

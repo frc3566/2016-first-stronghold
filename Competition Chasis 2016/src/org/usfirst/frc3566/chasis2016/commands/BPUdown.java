@@ -21,8 +21,7 @@ public class BPUdown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.bpu.liftup();
-    	System.out.println("Bpu is lifting up");
+    	Robot.bpu.liftdown();
     }
 
     // Make this return true when this Command no longer needs to run execute()

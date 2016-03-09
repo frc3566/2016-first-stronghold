@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class recenterFrontWheel extends Command {
+public class recenterFrontWheels extends Command {
 	
 	 double Frontcenter, currentValue, range;
 	 boolean finished;

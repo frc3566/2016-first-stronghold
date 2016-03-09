@@ -11,13 +11,10 @@
 
 package org.usfirst.frc3566.chasis2016.subsystems;
 
-import org.usfirst.frc3566.chasis2016.Robot;
+
 import org.usfirst.frc3566.chasis2016.RobotMap;
 import org.usfirst.frc3566.chasis2016.commands.*;
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -133,6 +130,7 @@ public class driveTrain extends Subsystem {
     		if(RobotMap.steeringAnalogPotentiometerBACK.get() <RobotMap.BACK_LIMITS_MAX_RIGHT){
     			cANTalon6.set(xAxis*-.5);
     		}
+    	
     	}
     }
     	// new limits Front Drive 7.416 12.071

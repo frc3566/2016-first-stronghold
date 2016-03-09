@@ -47,6 +47,8 @@ public class RobotMap {
 	    public static CANTalon CatapultBIGGearWinch; //8
 	    public static CANTalon rulerWinchEndGameRulerWinch;//9
 	    public static Talon catapultSwitch; //9PWM  
+	    public static CANTalon BPUfunction; 
+	    
 	    
 	    public static RobotDrive driveTrainRobot4;
 	    public static Servo triggerServo;
@@ -146,6 +148,8 @@ public class RobotMap {
           catapultWinchAimerCatapultLimitSwitchDIO0 = new DigitalInput(0);
           LiveWindow.addSensor("CatapultWinchAimer", "CatapultLimitSwitchDIO0", catapultWinchAimerCatapultLimitSwitchDIO0);
           
+          
+          
           //HEY YOU HAVE ENCODERS SLATED FOR DIO PORTS 1-2 and 3-4 And a color sensor at port 5 SO IT CAUSES PROBLEMS IF YOU RE-USE THEM
           //DON'T
           
@@ -222,6 +226,8 @@ public class RobotMap {
           
           driveTrainRobot4 = new RobotDrive (backLeftMotor, frontLeftMotor, backRightMotor, frontRightMotor);
           
+          BPUfunction = new CANTalon(11);
+          LiveWindow.addActuator("BPU Function", "BPU Function", BPUfunction);
           
           
     }  

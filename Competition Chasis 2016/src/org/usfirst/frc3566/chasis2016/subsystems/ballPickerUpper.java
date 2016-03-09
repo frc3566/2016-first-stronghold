@@ -20,13 +20,13 @@ public class ballPickerUpper extends Subsystem {
     }
     
     public void liftdown(){
-    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED);
-    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED * -1);
+    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*-1);
+    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED );
     }
     
     public void liftup(){
-    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED*-1);
-    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED);
+    	pickUpBall.set(RobotMap.BPU_MOTOR_SPEED);
+    	pickUpBall2.set(RobotMap.BPU_MOTOR_SPEED * -1);
     }
     
     public void BPUmovement(double bpuSpeed){
