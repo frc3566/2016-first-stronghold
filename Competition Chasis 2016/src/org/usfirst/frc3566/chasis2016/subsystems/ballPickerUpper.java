@@ -30,6 +30,7 @@ public class ballPickerUpper extends Subsystem {
     }
     
     public void BPUmovement(double bpuSpeed){
+    	
     	pickUpBall.set(bpuSpeed);
     	pickUpBall2.set(bpuSpeed*-1);
     }

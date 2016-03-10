@@ -25,7 +25,7 @@ public class recenterFrontWheels extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	currentValue = RobotMap.steeringAnalogPotentiometerFRONT.get();
-    	if (currentValue < range + Frontcenter){
+    	if (currentValue < -1*range + Frontcenter){
     		RobotMap.frontSteering.set(-0.1); //test if pos or neg
     		System.out.println("Frontsteer trying to center: curr value smaller than center");
     	} else if (currentValue > range + Frontcenter){

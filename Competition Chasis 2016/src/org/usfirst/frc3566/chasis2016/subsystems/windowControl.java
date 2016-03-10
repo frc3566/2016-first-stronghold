@@ -28,6 +28,9 @@ public class windowControl extends Subsystem {
 		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED);
 		
 	}
+	public void joystickControl(){
+		
+	}
 	public void backWindowRightTurning() {
 		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED * -1);
 		
