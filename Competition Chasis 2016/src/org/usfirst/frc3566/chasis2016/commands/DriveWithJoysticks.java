@@ -55,8 +55,8 @@ public class DriveWithJoysticks extends Command {
 	@Override
 	protected void initialize() {
 		// TODO Auto-generated method stub
-		SteeringSystem = new steeringSystem ();
-		SteeringSystem.start();
+		//SteeringSystem = new steeringSystem ();
+		//SteeringSystem.start();
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class DriveWithJoysticks extends Command {
 		Robot.driveTrain.driveIt(Robot.oi.getY());
 		Robot.bpu.BPUmovement(Robot.oi.getxBoxY());
 		
-	//	Robot.driveTrain.wheelSteering(Robot.oi.getX(), Robot.driveTrain.getReversedState());
+		Robot.driveTrain.wheelSteering(Robot.oi.getX(), Robot.driveTrain.getReversedState());
 	}
 
 	@Override

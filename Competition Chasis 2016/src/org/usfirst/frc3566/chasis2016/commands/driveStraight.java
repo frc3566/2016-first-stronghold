@@ -24,7 +24,7 @@ public class driveStraight extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.driveIt(SPEED);
+    	Robot.driveTrain.driveIt(-1*SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()

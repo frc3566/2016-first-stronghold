@@ -47,8 +47,6 @@ public class Autonomous extends CommandGroup {
 		        addSequential(new recenterBackWheels());
 		        addParallel(new recenterFrontWheels());
 
-		        addSequential(new driveStraight(.6,3));
-				
 		        
 //			
 				
