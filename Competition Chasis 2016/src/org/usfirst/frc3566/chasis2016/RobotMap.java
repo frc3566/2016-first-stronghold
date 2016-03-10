@@ -58,17 +58,22 @@ public class RobotMap {
 	    public static RobotDrive driveTrainRobot4;
 	    public static Servo triggerServo;
 	    
-	    public static final double WINDOW_MOTOR_SPEED = .6;
+	    public static final double WINDOW_MOTOR_SPEED = 1;
 		public static final double BPU_MOTOR_SPEED=1;
 		public static final double CATAPULT_SPEED=0.5;
 		public static boolean solenoidMode=false;	
 		
+		/*
+		 * facts about steering!!!!
+		 * positive power on the motors turns it right
+		 * negative power on the motors turns it left
+		 */
 		public static final double LINEAR_FRONT_CENTER= 9.5; //has to retest!! has to retest!!!!
 		public static final double LINEAR_BACK_CENTER= 3.3; 
-	    public static final double FRONT_LIMITS_MAX_RIGHT =8.5 ;
-	    public static final double FRONT_LIMITS_MAX_LEFTT = 10;
-	    public static final double BACK_LIMITS_MAX_RIGHT =5 ;
-	    public static final double BACK_LIMITS_MAX_LEFT =2 ;
+	    public static final double FRONT_LIMITS_MAX_RIGHT_LARGER = 12.0;
+	    public static final double FRONT_LIMITS_MAX_LEFTT = 7.7;
+	    public static final double BACK_LIMITS_MAX_RIGHT =1.4 ;
+	    public static final double BACK_LIMITS_MAX_LEFT_LARGER =5.8 ;
 	    public static final double STEERING_RANGE=.5;
 	    public static final double RECENTER_TIMEOUT=1.5;
 	    		

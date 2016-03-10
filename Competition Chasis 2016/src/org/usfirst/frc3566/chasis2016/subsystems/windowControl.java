@@ -25,25 +25,25 @@ public class windowControl extends Subsystem {
     }
 	public void backWindowLeftTurning() {//left is positive for now, but maybe it's wrong.
 		//we'll have to test it
-		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED);
+		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED * -1);
 		
 	}
 	public void joystickControl(){
 		
 	}
 	public void backWindowRightTurning() {
-		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED * -1);
+		backWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED );
 		
 	}
 	public void backWindowStopTurning() {
 		backWindowMotor.set(0.0);
 	}
 	public void frontWindowLeftTurning() {
-		frontWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED);
+		frontWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED*-1);
 		
 	}
 	public void frontWindowRightTurning() {
-		frontWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED * -1);
+		frontWindowMotor.set(RobotMap.WINDOW_MOTOR_SPEED );
 		
 	}
 	public void frontWindowStopTurning() {

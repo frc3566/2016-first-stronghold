@@ -26,10 +26,10 @@ public class steeringSystem extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	frontMax = RobotMap.FRONT_LIMITS_MAX_LEFTT;
-    	frontMin = RobotMap.FRONT_LIMITS_MAX_RIGHT;
-    	backMax = RobotMap.BACK_LIMITS_MAX_RIGHT;
-    	backMin = RobotMap.BACK_LIMITS_MAX_LEFT;
+    	frontMin = RobotMap.FRONT_LIMITS_MAX_LEFTT;
+    	frontMax = RobotMap.FRONT_LIMITS_MAX_RIGHT_LARGER;
+    	backMin = RobotMap.BACK_LIMITS_MAX_RIGHT;
+    	backMax = RobotMap.BACK_LIMITS_MAX_LEFT_LARGER;
     	frontSteering = RobotMap.frontSteering;
     	backSteering = RobotMap.backSteering;
     	frontCenter = RobotMap.LINEAR_FRONT_CENTER;
@@ -44,12 +44,12 @@ public class steeringSystem extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	JoystickXaxis = Robot.oi.joystick1.getRawAxis(1);
+    	JoystickXaxis = Robot.oi.joystick1.getRawAxis(0);
     	double currFront = RobotMap.steeringAnalogPotentiometerFRONT.get();
     	double currBack = RobotMap.steeringAnalogPotentiometerBACK.get();
     	double idealFrontPos = JoystickXaxis*mF + frontCenter;
     	double idealBackPos = JoystickXaxis*mB + backCenter;
-    	if( currFront > idealFrontPos + range){//if it's to the left of the goal
+    	if( currFront > idealFrontPos + range){//if it's to the right of the goal
     		frontSteering.set(-.2);
     	} else if (currFront < idealFrontPos - range){
     		frontSteering.set(.2);
@@ -58,9 +58,9 @@ public class steeringSystem extends Command {
     		System.out.println("Front wheels are in positooin ");
     	}
     	if( currBack > idealBackPos + range){//if it's to the left of the goal
-    		backSteering.set(-.2);
-    	} else if (currBack < idealBackPos - range){
     		backSteering.set(.2);
+    	} else if (currBack < idealBackPos - range){
+    		backSteering.set(-.2);
     	}else{
     		backSteering.set(0);
     		System.out.println("Back wheels are in positooin ");

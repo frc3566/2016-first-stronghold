@@ -99,35 +99,35 @@ public class driveTrain extends Subsystem {
     	System.out.println("Hi from wheel steering..  xAxis is " + xAxis);
     	
     	if(xAxis <0 ){
-    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() < RobotMap.FRONT_LIMITS_MAX_LEFTT) {
+    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() > RobotMap.FRONT_LIMITS_MAX_LEFTT) {
     			cANTalon5.set(xAxis * .5);
     		}
-    		if(RobotMap.steeringAnalogPotentiometerBACK.get() > RobotMap.BACK_LIMITS_MAX_LEFT){
+    		if(RobotMap.steeringAnalogPotentiometerBACK.get() < RobotMap.BACK_LIMITS_MAX_LEFT_LARGER){
     			cANTalon6.set(xAxis*-.5);
     		}
     	}
     	if(xAxis >0 ){
-    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() >RobotMap.FRONT_LIMITS_MAX_RIGHT) {
+    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() <RobotMap.FRONT_LIMITS_MAX_RIGHT_LARGER) {
     			cANTalon5.set(xAxis * .5);
     		}
-    		if(RobotMap.steeringAnalogPotentiometerBACK.get() <RobotMap.BACK_LIMITS_MAX_RIGHT){
+    		if(RobotMap.steeringAnalogPotentiometerBACK.get() >RobotMap.BACK_LIMITS_MAX_RIGHT){
     			cANTalon6.set(xAxis*-.5);
     		}
     	}
     } else {//if reversed
     	if(xAxis >0 ){
-    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() < RobotMap.FRONT_LIMITS_MAX_LEFTT) {
+    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() > RobotMap.FRONT_LIMITS_MAX_LEFTT) {
     			cANTalon5.set(xAxis * .5);
     		}
-    		if(RobotMap.steeringAnalogPotentiometerBACK.get() > RobotMap.BACK_LIMITS_MAX_LEFT){
+    		if(RobotMap.steeringAnalogPotentiometerBACK.get() < RobotMap.BACK_LIMITS_MAX_LEFT_LARGER){
     			cANTalon6.set(xAxis*-.5);
     		}
     	}
     	if(xAxis <0 ){
-    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() >RobotMap.FRONT_LIMITS_MAX_RIGHT) {
+    		if(RobotMap.steeringAnalogPotentiometerFRONT.get() <RobotMap.FRONT_LIMITS_MAX_RIGHT_LARGER) {
     			cANTalon5.set(xAxis * .5);
     		}
-    		if(RobotMap.steeringAnalogPotentiometerBACK.get() <RobotMap.BACK_LIMITS_MAX_RIGHT){
+    		if(RobotMap.steeringAnalogPotentiometerBACK.get() >RobotMap.BACK_LIMITS_MAX_RIGHT){
     			cANTalon6.set(xAxis*-.5);
     		}
     	

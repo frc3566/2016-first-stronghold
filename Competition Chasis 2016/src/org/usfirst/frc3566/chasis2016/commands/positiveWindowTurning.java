@@ -22,9 +22,9 @@ public class positiveWindowTurning extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if (backOrFront==-1 && RobotMap.steeringAnalogPotentiometerBACK.get()>=MINIMUM_BACK){
+    	if (backOrFront==-1 ){//&& RobotMap.steeringAnalogPotentiometerBACK.get()>=MINIMUM_BACK){
         	Robot.windowControl.backWindowLeftTurning();
-        	}else if(backOrFront==1 && RobotMap.steeringAnalogPotentiometerFRONT.get()>=MINIMUM_FRONT){
+        	}else if(backOrFront==1){// && RobotMap.steeringAnalogPotentiometerFRONT.get()>=MINIMUM_FRONT){
         		Robot.windowControl.frontWindowLeftTurning();
         	}
     	//this.setTimeout(.3);
