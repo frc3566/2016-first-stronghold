@@ -35,8 +35,8 @@ public class autoRecenterGoLeft extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	RobotMap.autoRecenterCalc.storeLeftSide(RobotMap.steeringAnalogPotentiometerFRONT.get(), 
-    	RobotMap.steeringAnalogPotentiometerBACK.get());
+    //	RobotMap.autoRecenterCalc.storeLeftSide(RobotMap.steeringAnalogPotentiometerFRONT.get(), 
+    	//RobotMap.steeringAnalogPotentiometerBACK.get());
     	frontSteering.set(0);
     	backSteering.set(0);
     }

@@ -134,12 +134,12 @@ public class OI {
         frontWindowMotorNegative.whileHeld(new negativeWindowTurning(1));
         
         backWindowMotorPositive = new JoystickButton(joystick1, 9);
-        backWindowMotorPositive.whileHeld(new positiveWindowTurning(-1));
-        // turns right, decreases potentiometer minimum 2.3 
+        backWindowMotorPositive.whileHeld(new negativeWindowTurning(-1));
+        // turns left, increases potentiometer 5.8
         
         backWindowMotorNegative = new JoystickButton(joystick1, 10);
-        backWindowMotorNegative.whileHeld(new negativeWindowTurning(-1));
-        // turns left increases potentiometer 5.8
+        backWindowMotorNegative.whileHeld(new positiveWindowTurning(-1));
+        // turns right
         
         bothWindowMotorPositive = new JoystickButton(joystick1, 11);
         bothWindowMotorPositive.whileHeld(new positiveWindowTurning(1));
